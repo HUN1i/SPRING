@@ -23,4 +23,8 @@ public class TableController {
     public MyTable postAll(@RequestBody TableDTO tableDTO){
         return tableService.postTables(tableDTO);
     }
+    @PutMapping("/{id}")
+    public MyTable putAll(@RequestBody TableDTO tableDTO, @PathVariable Integer id){
+        return tableService.putTables(tableDTO, id);
+    }
 }

@@ -21,4 +21,16 @@ public class MyTable {
         this.title = title;
         this.content = content;
     }
+
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 }
