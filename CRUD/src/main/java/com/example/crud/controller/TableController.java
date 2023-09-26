@@ -1,9 +1,8 @@
 package com.example.crud.controller;
 
-import com.example.crud.domain.myTable;
+import com.example.crud.domain.MyTable;
 import com.example.crud.service.TableService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,7 +15,12 @@ public class TableController {
     }
 
     @GetMapping
-    public List<myTable> getAll(){
+    public List<MyTable> getAll(){
         return tableService.getTables();
+    }
+
+    @PostMapping
+    public MyTable postAll(@RequestBody TableDTO tableDTO){
+        return tableService.postTables(tableDTO);
     }
 }
