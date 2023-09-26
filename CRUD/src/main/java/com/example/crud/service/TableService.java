@@ -27,10 +27,7 @@ public class TableService {
         Optional<MyTable> myTable = tableRepo.findById(id);
         if(myTable.isPresent()){
             MyTable existTable = myTable.get();
-            existTable.setMemberName(tableDTO.getMemberName());
-            existTable.setTitle(tableDTO.getTitle());
-            existTable.setContent(tableDTO.getContent());
-            return tableRepo.save(existTable);
+            return tableRepo.save(existTable.update(tableDTO));
 
         }
         throw new EntityNotFoundException("없다.");

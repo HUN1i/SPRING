@@ -1,5 +1,6 @@
 package com.example.crud.domain;
 
+import com.example.crud.controller.TableDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -22,15 +23,10 @@ public class MyTable {
         this.content = content;
     }
 
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
+    public MyTable update(TableDTO tableDTO) {
+        this.memberName = tableDTO.getMemberName();
+        this.title = tableDTO.getTitle();
+        this.content = tableDTO.getContent();
+        return this;
     }
 }

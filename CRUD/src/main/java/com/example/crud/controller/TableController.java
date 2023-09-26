@@ -2,6 +2,8 @@ package com.example.crud.controller;
 
 import com.example.crud.domain.MyTable;
 import com.example.crud.service.TableService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,7 +26,7 @@ public class TableController {
         return tableService.postTables(tableDTO);
     }
     @PutMapping("/{id}")
-    public MyTable putAll(@RequestBody TableDTO tableDTO, @PathVariable Integer id){
-        return tableService.putTables(tableDTO, id);
+    public ResponseEntity<MyTable> putAll(@RequestBody TableDTO tableDTO, @PathVariable Integer id){
+        return ResponseEntity.status(HttpStatus.OK).body(tableService.putTables(tableDTO, id));
     }
 }
