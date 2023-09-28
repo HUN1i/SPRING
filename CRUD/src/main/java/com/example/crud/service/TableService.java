@@ -32,4 +32,9 @@ public class TableService {
         }
         throw new EntityNotFoundException("없다.");
     }
+
+    public boolean deleteTable(Integer id) {
+        tableRepo.deleteById(id);
+        return true;
+    }
 }

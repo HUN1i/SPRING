@@ -29,4 +29,10 @@ public class TableController {
     public ResponseEntity<MyTable> putAll(@RequestBody TableDTO tableDTO, @PathVariable Integer id){
         return ResponseEntity.status(HttpStatus.OK).body(tableService.putTables(tableDTO, id));
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteOne(@PathVariable Integer id){
+        boolean res = tableService.deleteTable(id);
+        if(res = true) return ResponseEntity.status(HttpStatus.OK).body("OK");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not Found");
+    }
 }
