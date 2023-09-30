@@ -37,4 +37,10 @@ public class TableService {
         tableRepo.deleteById(id);
         return true;
     }
+
+    public Optional<MyTable> getOneTable(Integer id) {
+        Optional<MyTable> T =  tableRepo.findById(id);
+        if(T.isEmpty()) throw new EntityNotFoundException("없단다");
+        return T;
+    }
 }

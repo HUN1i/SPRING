@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class TableController {
@@ -19,6 +20,11 @@ public class TableController {
     @GetMapping
     public List<MyTable> getAll(){
         return tableService.getTables();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<MyTable> getOne(@PathVariable Integer id){
+        return tableService.getOneTable(id);
     }
 
     @PostMapping
