@@ -1,6 +1,7 @@
 package com.example.crud.controller;
 
 import com.example.crud.domain.MyTable;
+import com.example.crud.domain.UserTable;
 import com.example.crud.service.TableService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +32,7 @@ public class TableController {
     public MyTable postAll(@RequestBody TableDTO tableDTO){
         return tableService.postTables(tableDTO);
     }
+
     @PutMapping("/{id}")
     public ResponseEntity<MyTable> putAll(@RequestBody TableDTO tableDTO, @PathVariable Integer id){
         return ResponseEntity.status(HttpStatus.OK).body(tableService.putTables(tableDTO, id));
