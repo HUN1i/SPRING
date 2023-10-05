@@ -15,7 +15,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping
+    @PostMapping("/user")
     public UserTable postUser(@RequestBody UserDTO userDTO){
         return userService.postName(userDTO);
     }

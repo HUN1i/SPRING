@@ -13,7 +13,6 @@ import java.util.Optional;
 @RestController
 public class TableController {
     private final TableService tableService;
-
     public TableController(TableService tableService) {
         this.tableService = tableService;
     }
